@@ -1,2 +1,1 @@
-#<center>Domirandos official webpage</center>
-
+<h2><b><center>Domirandos official webpage</center></b></h2>

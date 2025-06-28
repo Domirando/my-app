@@ -5,7 +5,7 @@ export default function About () {
         <ScrollPage page={1}>
             <Animator animation={ZoomInScrollOut}>
                 <p className="text-center text-2xl">
-                    <pre>Currently I am a student of Mukhammad al-Khawrezmi IT School.</pre><pre>Teacher for web development enthusiasts!</pre> <pre> Front-End Developer in GD Team!</pre>
+                    <p>Currently I am an open-source developer and a student majoring Chemical and Materials Engineering.</p>
                 </p>
             </Animator>
         </ScrollPage>
