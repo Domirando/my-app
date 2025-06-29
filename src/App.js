@@ -24,11 +24,12 @@ function App() {
 
         <ScrollPage page={3}>
           <div className="flex justify-center items-center h-full">
-            <span className="text-3xl">
+            <span className="text-3xl flex flex-col gap-3">
               <Animator animation={MoveIn(-1000, 0)}>You can find all my mini projects on my <a href='https://github.com/Domirando' className='underline text-white bg-black p-0.5'> GitHub</a> profile</Animator>
               <Animator animation={MoveIn(1000, 0)}>
                 You can read more about me in my <a href='https://www.linkedin.com/in/maftuna-vohidjonovna/' className='underline text-white bg-black p-0.5'>Linkedin</a> profile
               </Animator>
+              <Animator animation={MoveIn(-1000, 0)}>And don't forget checking out my little <a href='https://domirandos-blog.vercel.app/' className='underline text-white bg-black p-0.5'> BLOG</a> :)</Animator>
             </span>
           </div>
         </ScrollPage>
