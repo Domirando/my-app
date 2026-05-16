@@ -1,3 +1,260 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg-primary: #060614;
+  --bg-secondary: #0d0d24;
+  --accent-purple: #a855f7;
+  --accent-cyan: #22d3ee;
+  --accent-gold: #fbbf24;
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.08);
+  --card: rgba(255, 255, 255, 0.04);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--accent-purple); border-radius: 3px; }
+::selection { background: rgba(168, 85, 247, 0.3); color: #fff; }
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass card ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.hover-glow { transition: all 0.3s ease; }
+.hover-glow:hover {
+  box-shadow: 0 0 35px rgba(168, 85, 247, 0.25);
+  border-color: rgba(168, 85, 247, 0.4) !important;
+}
+
+/* ── Animated gradient CTA ── */
+.animated-gradient {
+  background: linear-gradient(-45deg, #a855f7, #06b6d4, #8b5cf6, #0ea5e9);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Hero ambient glows ── */
+.hero-bg { position: relative; overflow: hidden; }
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.13), transparent 65%);
+  top: -150px; right: -150px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 9s ease-in-out infinite;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.08), transparent 65%);
+  bottom: -80px; left: -80px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 7s ease-in-out infinite reverse;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(4deg); }
+}
+
+/* ── Nav backdrop blur ── */
+.nav-blur {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* ── Avatar glow ring ── */
+.avatar-glow {
+  box-shadow:
+    0 0 0 4px rgba(168, 85, 247, 0.25),
+    0 0 50px rgba(168, 85, 247, 0.2),
+    0 0 100px rgba(34, 211, 238, 0.08);
+}
+
+/* ── Skill tags ── */
+.skill-tag { transition: all 0.25s ease; cursor: default; }
+.skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.2);
+}
+
+/* ── Chat bubbles ── */
+.chat-bubble-ai {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px 18px 18px 4px;
+}
+.chat-bubble-user {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  border-radius: 18px 18px 4px 18px;
+}
+
+/* ── Digital Human float button ── */
+.dh-button {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  box-shadow: 0 6px 35px rgba(124, 58, 237, 0.55);
+  transition: all 0.3s ease;
+}
+.dh-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 45px rgba(124, 58, 237, 0.75);
+}
+
+/* ── Loading dots ── */
+@keyframes loadingDot {
+  0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1); }
+}
+.loading-dot { animation: loadingDot 1.3s ease-in-out infinite; }
+.loading-dot:nth-child(1) { animation-delay: 0s; }
+.loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* ── Cursor blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink { animation: blink 1s step-end infinite; }
+
+/* ── Role text transition ── */
+.role-text { transition: opacity 0.4s ease, transform 0.4s ease; }
+.role-text.changing { opacity: 0; transform: translateY(8px); }
+
+/* ── Music visualiser bars ── */
+@keyframes musicBar {
+  0%   { height: 4px; }
+  25%  { height: 14px; }
+  50%  { height: 8px; }
+  75%  { height: 18px; }
+  100% { height: 6px; }
+}
+
+/* ── Slow spin for circuit ring ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Circuit-board background ── */
+.chip-bg {
+  position: relative;
+  overflow: hidden;
+}
+.chip-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(251,191,36,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251,191,36,0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+  z-index: 0;
+}
+.chip-bg > * { position: relative; z-index: 1; }
+
+/* ── IC chip package card ── */
+.ic-package {
+  position: relative;
+  border: 1.5px solid rgba(251,191,36,0.45);
+  background: linear-gradient(135deg, rgba(251,191,36,0.07) 0%, rgba(6,6,20,0.9) 60%);
+  box-shadow: 0 0 40px rgba(251,191,36,0.12), inset 0 0 60px rgba(251,191,36,0.03);
+  border-radius: 12px;
+  animation: chipBreath 4s ease-in-out infinite;
+}
+@keyframes chipBreath {
+  0%, 100% { box-shadow: 0 0 40px rgba(251,191,36,0.12), inset 0 0 60px rgba(251,191,36,0.03); }
+  50%       { box-shadow: 0 0 60px rgba(251,191,36,0.22), inset 0 0 60px rgba(251,191,36,0.06); }
+}
+
+/* IC top notch */
+.ic-notch {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 18px;
+  border-radius: 0 0 18px 18px;
+  background: #060614;
+  border: 1.5px solid rgba(251,191,36,0.45);
+  border-top: none;
+}
+
+/* IC pins */
+.ic-pin {
+  width: 20px;
+  height: 10px;
+  background: linear-gradient(90deg, #92400e, #fbbf24, #92400e);
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 6px rgba(251,191,36,0.5);
+}
+.ic-pin-left {
+  border-radius: 3px 0 0 3px;
+}
+
+/* ── Signal pulse along circuit trace ── */
+@keyframes signalFlow {
+  0%   { stroke-dashoffset: 200; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { stroke-dashoffset: 0;   opacity: 0; }
+}
+@keyframes nodePulse {
+  0%, 100% { r: 3; opacity: 0.5; }
+  50%       { r: 5; opacity: 1; }
+}
+.signal-path {
+  stroke-dasharray: 8 4;
+  stroke-dashoffset: 200;
+  animation: signalFlow 2.5s ease-in-out infinite;
+}
+
+/* ── Fade-slide in for chip skills ── */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ── Skill card chip glow ── */
+.chip-card-glow:hover {
+  box-shadow: 0 0 50px rgba(251,191,36,0.25) !important;
+  border-color: rgba(251,191,36,0.6) !important;
+}
