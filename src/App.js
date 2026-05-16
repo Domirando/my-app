@@ -1,53 +1,110 @@
-import {
-  Animator,
-  ScrollContainer,
-  ScrollPage,
-  batch,
-  Fade,
-  MoveIn,
-  Sticky,
-} from "react-scroll-motion";
-import React, { Fragment } from "react";
-import Header from "./Header";
-import About from "./About";
-import Reflection from "./Reflection";
+import React, { useEffect } from 'react';
+import { BrowserRouter, useNavigate, useLocation } from 'react-router-dom';
 
+import Nav from './Nav';
+import Hero from './Hero';
+import About from './About';
+import Skills from './Skills';
+import Education from './Education';
+import Experience from './Experience';
+import Contact from './Contact';
+import DigitalHuman from './DigitalHuman';
+import BackgroundMusic from './BackgroundMusic';
 
-function App() {
+const SECTIONS = ['hero', 'about', 'skills', 'education', 'experience', 'contact'];
+
+function HashScrollInit() {
+  const { hash } = useLocation();
+  useEffect(() => {
+    const idx = SECTIONS.indexOf(hash.replace('#', ''));
+    if (idx > 0) {
+      setTimeout(() => {
+        const root = document.getElementById('scroll-root');
+        if (root) root.scrollTo({ top: idx * window.innerHeight, behavior: 'smooth' });
+      }, 80);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  return null;
+}
+
+function Portfolio() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navigate(`#${entry.target.id}`, { replace: true });
+          }
+        });
+      },
+      { root: document.getElementById('scroll-root'), threshold: 0.5 }
+    );
+
+    SECTIONS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [navigate]);
+
   return (
-    <Fragment>
-      <ScrollContainer>
-        <Header />
+    <div
+      id="scroll-root"
+      style={{
+        background: '#060614',
+        color: '#f1f5f9',
+        overflowX: 'hidden',
+        scrollSnapType: 'y proximity',
+        scrollBehavior: 'smooth',
+        overflowY: 'scroll',
+        height: '100vh',
+      }}
+    >
+      <HashScrollInit />
+      <Nav />
+
+      <section id="hero" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+        <Hero />
+      </section>
+
+      <section id="about" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
         <About />
-        <Reflection />
+      </section>
 
+      <section id="skills" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+        <Skills />
+      </section>
 
-        <ScrollPage page={3}>
-          <div className="flex justify-center items-center h-full">
-            <span className="text-3xl flex flex-col gap-3">
-              <Animator animation={MoveIn(-1000, 0)}>You can find all my mini projects on my <a href='https://github.com/Domirando' className='underline text-white bg-black p-0.5'> GitHub</a> profile</Animator>
-              <Animator animation={MoveIn(1000, 0)}>
-               You can read more about me in my <a href='https://www.linkedin.com/in/maftuna-vohidjonovna/' className='underline text-white bg-black p-0.5'>Linkedin</a> <a href='https://t.me/domirandos' className='underline text-white bg-black p-0.5'>Telegram</a> profiles
-              </Animator>
-              <Animator animation={MoveIn(-1000, 0)}><i>And don't forget checking out my little <a href='https://domirandos-blog.vercel.app/' className='underline text-white bg-black p-0.5'> Personal Blog</a> <a href='https://medium.com/@Domirando' className='underline text-white bg-black p-0.5'> Medium</a> :)</i></Animator>
-            </span>
-          </div>
-        </ScrollPage>
+      <section id="education" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+        <Education />
+      </section>
 
-        <ScrollPage page={4}>
-          <Animator animation={batch(Fade(), Sticky())}>
-            <span className="text-3xl"  >Contact with me via:</span>
-            <br />
-              <span className='text-xl w-7/12 flex justify-between mt-1'>
-               <a href='mailto:maisiedev@gmail.com' className='underline text-white bg-black p-0.5'>Gmail</a>
-               <a href='https://www.linkedin.com/in/maftuna-vohidjonovna/' className='underline text-white bg-black p-0.5'>Linkedin</a>
-              </span>
-          </Animator>
-        </ScrollPage>
-        <footer className={"flex justify-center p-4 bg-gray-50"}>&copy; Domirando 2021-2025</footer>
-      </ScrollContainer>
-    </Fragment>
+      <section id="experience" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+        <Experience />
+      </section>
+
+      <section id="contact" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+        <Contact />
+      </section>
+
+      <footer style={{ textAlign: 'center', padding: '2rem', color: '#475569', fontSize: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <span className="gradient-text" style={{ fontWeight: 700 }}>Domirando</span>
+        {' · '}Maftuna Vohidjonovna{' · '}© 2021–2025
+      </footer>
+
+      <BackgroundMusic />
+      <DigitalHuman />
+    </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Portfolio />
+    </BrowserRouter>
+  );
+}
