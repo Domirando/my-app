@@ -1,10 +1,10 @@
 import React from 'react';
 
 const CONTACTS = [
-  { label: 'Email',    value: 'maisiedev@gmail.com',         href: 'mailto:maisiedev@gmail.com',                              sym: '✉', desc: 'Best for professional inquiries' },
+  { label: 'Email',    value: 'vohidjonovnamaftuna@gmail.com',         href: 'mailto:vohidjonovnamaftuna@gmail.com',                              sym: '✉', desc: 'Best for professional inquiries' },
   { label: 'LinkedIn', value: 'maftuna-vohidjonovna',        href: 'https://www.linkedin.com/in/maftuna-vohidjonovna/',        sym: '◈', desc: 'Professional network'            },
   { label: 'GitHub',   value: '@Domirando',                  href: 'https://github.com/Domirando',                            sym: '⌥', desc: 'Open-source projects'           },
-  { label: 'Telegram', value: '@domirandos',                  href: 'https://t.me/domirandos',                                 sym: '◎', desc: 'Quick chat'                     },
+  { label: 'Telegram', value: '@maftuneng',                  href: 'https://t.me/maftuneng',                                 sym: '◎', desc: 'Quick chat'                     },
 ];
 
 export default function Contact() {
@@ -53,7 +53,7 @@ export default function Contact() {
 
         {/* CTA */}
         <a
-          href="mailto:maisiedev@gmail.com"
+          href="mailto:vohidjonovnamaftuna@gmail.com"
           className="inline-block px-10 py-3.5 animated-gradient text-white font-bold rounded-full text-sm hover:scale-105 transition-transform"
           style={{ boxShadow: '0 8px 30px rgba(168,85,247,0.3)', textDecoration: 'none' }}
         >
