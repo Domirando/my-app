@@ -7,7 +7,8 @@ const LINKS = [
   { hash: 'skills',     label: 'Skills',     idx: 2 },
   { hash: 'education',  label: 'Education',  idx: 3 },
   { hash: 'experience', label: 'Experience', idx: 4 },
-  { hash: 'contact',    label: 'Contact',    idx: 5 },
+  { hash: 'writing',    label: 'Writing',    idx: 5 },
+  { hash: 'contact',    label: 'Contact',    idx: 6 },
 ];
 
 function scrollTo(idx) {
@@ -65,7 +66,7 @@ export default function Nav() {
             </button>
           ))}
           <button
-            onClick={() => scrollTo(5)}
+            onClick={() => scrollTo(6)}
             className="px-5 py-2 rounded-full text-sm transition-all duration-300 cursor-pointer"
             style={{
               border: '1px solid rgba(168,85,247,0.4)',
