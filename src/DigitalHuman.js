@@ -80,7 +80,7 @@ const kb = [
   {
     id: 'contact',
     triggers: ['contact', 'reach', 'email', 'get in touch', 'connect', 'talk', 'message', 'dm', 'reach out'],
-    response: "Let's connect! 🤝\n\n📧 **Email:** vohidjonovnamaftuna@gmail.com\n💼 **LinkedIn:** linkedin.com/in/maftuna-vohidjonovna\n💬 **Telegram:** @maftuneng\n\nDon't be shy — I love meeting new people!",
+    response: "Let's connect! 🤝\n\n📧 **Email:** vohidjonovnamaftuna@gmail.com\n💼 **LinkedIn:** linkedin.com/in/maftuna-vohidjonovna\n▶ **YouTube:** youtube.com/@domirando\n\nDon't be shy — I love meeting new people!",
   },
   {
     id: 'location',

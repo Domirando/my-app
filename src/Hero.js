@@ -6,7 +6,7 @@ const ROLES = ['Chip Development Engineer', 'Frontend Engineer', 'Open-Source De
 const SOCIALS = [
   { href: 'https://github.com/Domirando',                          label: 'GitHub',   sym: '⌥' },
   { href: 'https://www.linkedin.com/in/maftuna-vohidjonovna/',     label: 'LinkedIn', sym: '◈' },
-  { href: 'https://t.me/maftuneng',                               label: 'Telegram', sym: '◎' },
+  { href: 'https://www.youtube.com/@domirando',                   label: 'YouTube',  sym: '▶' },
   { href: 'https://domirandos-blog.vercel.app/',                   label: 'Blog',     sym: '✐' },
   { href: 'https://medium.com/@Domirando',                         label: 'Medium',   sym: '◉' },
 ];
