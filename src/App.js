@@ -8,10 +8,11 @@ import Skills from './Skills';
 import Education from './Education';
 import Experience from './Experience';
 import Contact from './Contact';
+import Writing from './Writing';
 import DigitalHuman from './DigitalHuman';
 import BackgroundMusic from './BackgroundMusic';
 
-const SECTIONS = ['hero', 'about', 'skills', 'education', 'experience', 'contact'];
+const SECTIONS = ['hero', 'about', 'skills', 'education', 'experience', 'writing', 'contact'];
 
 function HashScrollInit() {
   const { hash } = useLocation();
@@ -84,6 +85,10 @@ function Portfolio() {
 
       <section id="experience" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
         <Experience />
+      </section>
+
+      <section id="writing" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+        <Writing />
       </section>
 
       <section id="contact" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
