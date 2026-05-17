@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import aiAvatar from './ai-avatar.png';
 
 const kb = [
   {
@@ -197,7 +198,7 @@ export default function DigitalHuman() {
           <span className="text-white text-xl font-light">✕</span>
         ) : (
           <div className="relative">
-            <span className="text-2xl select-none">🤖</span>
+            <img src={aiAvatar} alt="AI" className="w-10 h-10 rounded-full object-cover" />
             {pulse && (
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-cyan-400 rounded-full animate-ping" />
             )}
@@ -219,9 +220,7 @@ export default function DigitalHuman() {
               style={{ background: 'linear-gradient(-45deg, #7c3aed, #06b6d4, #6d28d9)', backgroundSize: '300% 300%', animation: 'gradientShift 6s ease infinite' }}
             >
               <div className="relative w-12 h-12 flex-shrink-0">
-                <div className="w-full h-full rounded-full bg-white/15 border-2 border-white/25 flex items-center justify-center text-2xl select-none">
-                  🤖
-                </div>
+                <img src={aiAvatar} alt="AI" className="w-full h-full rounded-full object-cover border-2 border-white/25" />
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 rounded-full border-2 border-white" />
               </div>
               <div>

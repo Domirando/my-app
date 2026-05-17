@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import myImage from './my_image.jpg';
 
 const ROLES = ['Chip Development Engineer', 'Frontend Engineer', 'Open-Source Developer', 'Engineering Student', 'Music Lover', 'Community Builder'];
@@ -62,9 +62,33 @@ export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [changing, setChanging] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [speaking, setSpeaking] = useState(false);
+  const audioRef = useRef(null);
+
+  const toggleAudio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (audio.paused) {
+      audio.currentTime = 0;
+      audio.play();
+      setSpeaking(true);
+    } else {
+      audio.pause();
+      setSpeaking(false);
+    }
+  };
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 100);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      const audio = audioRef.current;
+      if (!audio) return;
+      audio.play().then(() => setSpeaking(true)).catch(() => {});
+    }, 800);
     return () => clearTimeout(t);
   }, []);
 
@@ -84,7 +108,7 @@ export default function Hero() {
       <CircuitSvg />
 
       <div className="max-w-6xl mx-auto px-6 w-full" style={{ position: 'relative', zIndex: 1 }}>
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
           {/* Photo */}
           <div
@@ -95,7 +119,34 @@ export default function Hero() {
               transition: 'opacity 0.9s ease, transform 0.9s ease',
             }}
           >
+            <audio
+              ref={audioRef}
+              src="/digital-human-audio.mp3"
+              onEnded={() => setSpeaking(false)}
+            />
             <div style={{ position: 'relative', width: 240, height: 240 }}>
+              {/* Speaking glow rings */}
+              {speaking && <>
+                <div style={{
+                  position: 'absolute', inset: -10, borderRadius: '50%',
+                  border: '2px solid rgba(168,85,247,0.6)',
+                  animation: 'speakPulse 0.8s ease-in-out infinite',
+                  pointerEvents: 'none', zIndex: 2,
+                }} />
+                <div style={{
+                  position: 'absolute', inset: -20, borderRadius: '50%',
+                  border: '1.5px solid rgba(6,182,212,0.35)',
+                  animation: 'speakPulse 0.8s ease-in-out infinite 0.2s',
+                  pointerEvents: 'none', zIndex: 2,
+                }} />
+                <div style={{
+                  position: 'absolute', inset: -32, borderRadius: '50%',
+                  border: '1px solid rgba(168,85,247,0.2)',
+                  animation: 'speakPulse 0.8s ease-in-out infinite 0.4s',
+                  pointerEvents: 'none', zIndex: 2,
+                }} />
+              </>}
+
               {/* Circuit ring */}
               <svg width="300" height="300" viewBox="0 0 300 300"
                 style={{ position: 'absolute', top: -30, left: -30, opacity: 0.5, pointerEvents: 'none' }}>
@@ -116,16 +167,48 @@ export default function Hero() {
               <img
                 src={myImage}
                 alt="Maftuna Vohidjonovna"
-                className="rounded-full object-cover border-4 border-purple-500/30 relative"
-                style={{ width: 240, height: 240, zIndex: 1 }}
+                className="rounded-full object-cover border-4 relative"
+                style={{
+                  width: 240, height: 240, zIndex: 1,
+                  borderColor: speaking ? 'rgba(168,85,247,0.7)' : 'rgba(168,85,247,0.3)',
+                  transition: 'border-color 0.3s ease',
+                  cursor: 'pointer',
+                }}
+                onClick={toggleAudio}
+                title={speaking ? 'Click to stop' : 'Click to hear me speak'}
               />
-              <div
-                className="absolute flex items-center gap-1.5 rounded-full px-2.5 py-1"
-                style={{ bottom: 10, right: -10, zIndex: 2, background: '#060614', border: '1px solid rgba(52,211,153,0.3)' }}
+
+              {/* Play / speaking badge */}
+              <button
+                onClick={toggleAudio}
+                style={{
+                  position: 'absolute', bottom: 10, right: -10, zIndex: 3,
+                  display: 'flex', alignItems: 'center', gap: 6,
+                  borderRadius: 999, padding: '4px 10px',
+                  background: '#060614',
+                  border: `1px solid ${speaking ? 'rgba(168,85,247,0.5)' : 'rgba(52,211,153,0.3)'}`,
+                  cursor: 'pointer', transition: 'border-color 0.3s',
+                }}
               >
-                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-ping-slow" />
-                <span style={{ color: '#34d399', fontSize: 11, fontWeight: 500 }}>Open to Work</span>
-              </div>
+                {speaking ? (
+                  <>
+                    <span style={{ display: 'flex', gap: 2, alignItems: 'flex-end', height: 14 }}>
+                      {[0, 0.15, 0.3].map((d, i) => (
+                        <span key={i} style={{
+                          width: 3, borderRadius: 2, background: '#a855f7',
+                          animation: `soundBar 0.6s ease-in-out infinite ${d}s`,
+                        }} />
+                      ))}
+                    </span>
+                    <span style={{ color: '#a855f7', fontSize: 11, fontWeight: 500 }}>Speaking…</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full animate-ping-slow" />
+                    <span style={{ color: '#34d399', fontSize: 11, fontWeight: 500 }}>Domirando</span>
+                  </>
+                )}
+              </button>
             </div>
           </div>
 
@@ -204,7 +287,7 @@ export default function Hero() {
             {/* CTA */}
             <div className="flex flex-wrap gap-3">
               <button
-                onClick={() => document.getElementById('scroll-root')?.scrollTo({ top: 5 * window.innerHeight, behavior: 'smooth' })}
+                onClick={() => document.getElementById('scroll-root')?.scrollTo({ top: 6 * window.innerHeight, behavior: 'smooth' })}
                 className="px-7 py-2.5 animated-gradient text-white font-semibold rounded-full hover:scale-105 transition-transform text-sm cursor-pointer border-0"
                 style={{ boxShadow: '0 4px 20px rgba(168,85,247,0.3)' }}
               >
@@ -218,6 +301,7 @@ export default function Hero() {
               </button>
             </div>
           </div>
+
         </div>
       </div>
     </div>
