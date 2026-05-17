@@ -45,7 +45,7 @@ export default function About() {
 
             {/* Chip highlight badge */}
             <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-5"
               style={{
                 background: 'linear-gradient(135deg, rgba(251,191,36,0.12), rgba(251,191,36,0.06))',
                 border: '1px solid rgba(251,191,36,0.35)',
@@ -54,6 +54,25 @@ export default function About() {
             >
               <span style={{ fontSize: 16 }}>⬡</span>
               Passionate about Chip Development Engineering
+            </div>
+
+            {/* Download CV */}
+            <div>
+              <a
+                href="/cv.pdf"
+                download
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
+                style={{
+                  background: 'rgba(168,85,247,0.12)',
+                  border: '1px solid rgba(168,85,247,0.35)',
+                  color: '#c084fc',
+                  textDecoration: 'none',
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = 'rgba(168,85,247,0.25)')}
+                onMouseLeave={e => (e.currentTarget.style.background = 'rgba(168,85,247,0.12)')}
+              >
+                ↓ Download CV
+              </a>
             </div>
           </div>
 
