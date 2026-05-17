@@ -80,7 +80,7 @@ const kb = [
   {
     id: 'contact',
     triggers: ['contact', 'reach', 'email', 'get in touch', 'connect', 'talk', 'message', 'dm', 'reach out'],
-    response: "Let's connect! 🤝\n\n📧 **Email:** maisiedev@gmail.com\n💼 **LinkedIn:** linkedin.com/in/maftuna-vohidjonovna\n💬 **Telegram:** @domirandos\n\nDon't be shy — I love meeting new people!",
+    response: "Let's connect! 🤝\n\n📧 **Email:** vohidjonovnamaftuna@gmail.com\n💼 **LinkedIn:** linkedin.com/in/maftuna-vohidjonovna\n💬 **Telegram:** @maftuneng\n\nDon't be shy — I love meeting new people!",
   },
   {
     id: 'location',
@@ -90,7 +90,7 @@ const kb = [
   {
     id: 'hire',
     triggers: ['hire', 'hiring', 'freelance', 'available', 'opportunity', 'collaborate', 'open to work', 'job offer', 'contract'],
-    response: "I'm open to exciting opportunities! 🎯 Whether it's freelance frontend work, open-source collaboration, or full-time roles — let's talk!\n\nBest to reach out via **maisiedev@gmail.com** or LinkedIn. Looking forward to it! ✨",
+    response: "I'm open to exciting opportunities! 🎯 Whether it's freelance frontend work, open-source collaboration, or full-time roles — let's talk!\n\nBest to reach out via **vohidjonovnamaftuna@gmail.com** or LinkedIn. Looking forward to it! ✨",
   },
   {
     id: 'linkedin',

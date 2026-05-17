@@ -11,11 +11,11 @@ const CHIP_SKILLS = [
 
 const OTHER = [
   {
-    name: 'Frontend',
+    name: 'Stacks',
     sym: '◈',
     color: 'text-purple-400',
     tagClass: 'bg-purple-500/10 border-purple-500/20 text-purple-300 hover:border-purple-400/60 hover:bg-purple-500/20',
-    skills: ['React', 'JavaScript ES6+', 'HTML5', 'CSS3', 'Tailwind CSS'],
+    skills: ['React', 'JavaScript ES6+', 'HTML5', 'CSS3', 'Tailwind CSS', 'Rust', 'Java/Kotlin', 'Python'],
   },
   {
     name: 'Tools & Workflow',
@@ -29,7 +29,7 @@ const OTHER = [
     sym: '◉',
     color: 'text-emerald-400',
     tagClass: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300 hover:border-emerald-400/60 hover:bg-emerald-500/20',
-    skills: ['Open-Source', 'Tech Teaching', 'Hackathon Org', 'Community Building', 'Technical Writing'],
+    skills: ['Open-Source', 'Tech Teaching', 'Math Teaching', 'Hackathon Org', 'Community Building', 'Technical Writing'],
   },
 ];
 
