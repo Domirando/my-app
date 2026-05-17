@@ -7,7 +7,7 @@ const LINKS = [
   { hash: 'skills',     label: 'Skills',     idx: 2 },
   { hash: 'education',  label: 'Education',  idx: 3 },
   { hash: 'experience', label: 'Experience', idx: 4 },
-  { hash: 'writing',    label: 'Writing',    idx: 5 },
+  { hash: 'writing',    label: 'Papers',     idx: 5 },
   { hash: 'contact',    label: 'Contact',    idx: 6 },
 ];
 

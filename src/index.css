@@ -258,3 +258,15 @@ body {
   box-shadow: 0 0 50px rgba(251,191,36,0.25) !important;
   border-color: rgba(251,191,36,0.6) !important;
 }
+
+/* ── Speaking avatar rings ── */
+@keyframes speakPulse {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50%       { opacity: 0.9; transform: scale(1.04); }
+}
+
+/* ── Sound bar animation (speaking badge) ── */
+@keyframes soundBar {
+  0%, 100% { height: 4px; }
+  50%       { height: 14px; }
+}

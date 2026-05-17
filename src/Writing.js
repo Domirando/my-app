@@ -28,10 +28,10 @@ export default function Writing() {
     >
       <div className="max-w-4xl mx-auto px-6 w-full">
         <p className="text-purple-400 text-xs tracking-widest uppercase mb-3 font-semibold text-center">
-          ✦ &nbsp;My Writing
+          ✦ &nbsp;My Work
         </p>
         <h2 className="font-black mb-4 leading-tight text-center" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
-          Articles &amp; <span className="gradient-text">Essays</span>
+          Papers &amp; <span className="gradient-text">Publications</span>
         </h2>
         <p className="text-slate-400 text-sm mb-10 max-w-md mx-auto leading-relaxed text-center">
           Published research and personal writing — ideas that shape how I see technology and the world.
