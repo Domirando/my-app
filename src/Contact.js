@@ -4,7 +4,7 @@ const CONTACTS = [
   { label: 'Email',    value: 'vohidjonovnamaftuna@gmail.com',         href: 'mailto:vohidjonovnamaftuna@gmail.com',                              sym: '✉', desc: 'Best for professional inquiries' },
   { label: 'LinkedIn', value: 'maftuna-vohidjonovna',        href: 'https://www.linkedin.com/in/maftuna-vohidjonovna/',        sym: '◈', desc: 'Professional network'            },
   { label: 'GitHub',   value: '@Domirando',                  href: 'https://github.com/Domirando',                            sym: '⌥', desc: 'Open-source projects'           },
-  { label: 'Telegram', value: '@maftuneng',                  href: 'https://t.me/maftuneng',                                 sym: '◎', desc: 'Quick chat'                     },
+  { label: 'Discord',  value: 'discord.gg/vKw6tmnZ',          href: 'https://discord.gg/vKw6tmnZ',                            sym: '◎', desc: 'Quick chat'                     },
 ];
 
 export default function Contact() {
