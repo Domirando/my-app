@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import myImage from './my_image.jpg';
 
-const ROLES = ['Chip Development Engineer', 'Frontend Engineer', 'Open-Source Developer', 'Engineering Student', 'Music Lover', 'Community Builder'];
+const ROLES = ['Chip Development Engineer', 'Frontend Engineer', 'Open-Source Developer', 'Engineering Student', 'Music Lover', 'Community Builder', 'Gender Equality Advocate'];
 
 const SOCIALS = [
   { href: 'https://github.com/Domirando',                          label: 'GitHub',   sym: '⌥' },

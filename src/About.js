@@ -43,9 +43,14 @@ export default function About() {
               molecular bonds, and transistor gates.
             </p>
 
+            <p className="text-slate-400 text-sm leading-relaxed mb-5">
+              I'm also a <strong className="text-white">Gender Equality Advocate</strong> — I believe every
+              individual stands on equal footing by nature. Any system that says otherwise is the problem, not the person.
+            </p>
+
             {/* Chip highlight badge */}
             <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-5"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-3"
               style={{
                 background: 'linear-gradient(135deg, rgba(251,191,36,0.12), rgba(251,191,36,0.06))',
                 border: '1px solid rgba(251,191,36,0.35)',
@@ -54,6 +59,19 @@ export default function About() {
             >
               <span style={{ fontSize: 16 }}>⬡</span>
               Passionate about Chip Development Engineering
+            </div>
+
+            {/* Gender equality badge */}
+            <div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-5 ml-2"
+              style={{
+                background: 'linear-gradient(135deg, rgba(236,72,153,0.12), rgba(139,92,246,0.08))',
+                border: '1px solid rgba(236,72,153,0.35)',
+                color: '#f472b6',
+              }}
+            >
+              <span style={{ fontSize: 16 }}>⚖</span>
+              Gender Equality Advocate
             </div>
 
             {/* Download CV */}

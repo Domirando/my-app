@@ -10,7 +10,7 @@ const kb = [
   {
     id: 'identity',
     triggers: ['who are you', 'who is she', 'who is maftuna', 'who is domirando', 'tell me about yourself', 'tell me about her', 'introduce yourself', 'about you', 'about her'],
-    response: "I'm **Maftuna Vohidjonovna** — known online as **Domirando**! 🌟 I'm a Chemical and Materials Engineering student passionate about **chip development engineering**, open-source developer, and music enthusiast. I live at the intersection of silicon, science, and software!",
+    response: "I'm **Maftuna Vohidjonovna** — known online as **Domirando**! 🌟 I'm a Chemical and Materials Engineering student passionate about **chip development engineering**, open-source developer, music enthusiast, and a proud **Gender Equality Advocate** — because I believe every individual stands on equal footing by nature. I live at the intersection of silicon, science, and software!",
   },
   {
     id: 'chip',
