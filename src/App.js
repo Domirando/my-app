@@ -95,7 +95,7 @@ function Portfolio() {
 
       <footer style={{ textAlign: 'center', padding: '2rem', color: '#475569', fontSize: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <span className="gradient-text" style={{ fontWeight: 700 }}>Domirando</span>
-        {' · '}Maftuna Vohidjonovna{' · '}© 2021–2025
+        {' · '}Maftuna Vohidjonovna{' · '}© 2021–{new Date().getFullYear()}
       </footer>
 
       <BackgroundMusic />
