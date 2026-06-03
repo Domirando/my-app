@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      style={{ width: '100%', height: '100vh', display: 'flex', alignItems: 'center', paddingTop: 64, background: 'rgba(13,13,36,0.4)' }}
+      style={{ width: '100%', minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 80, paddingBottom: 32, background: 'rgba(13,13,36,0.4)' }}
     >
       <div className="max-w-4xl mx-auto px-6 w-full text-center">
         <p className="text-purple-400 text-xs tracking-widest uppercase mb-3 font-semibold">

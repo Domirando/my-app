@@ -97,7 +97,7 @@ export default function Experience() {
   return (
     <div
       id="experience"
-      style={{ width: '100%', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: 64, paddingBottom: 16 }}
+      style={{ width: '100%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: 80, paddingBottom: 32 }}
     >
       <div className="max-w-7xl mx-auto px-6 w-full">
         <p className="text-purple-400 text-xs tracking-widest uppercase mb-2 font-semibold">

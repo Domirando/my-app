@@ -236,6 +236,41 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Responsive avatar ── */
+.avatar-wrap { position: relative; width: 200px; height: 200px; }
+@media (min-width: 640px) { .avatar-wrap { width: 240px; height: 240px; } }
+
+.avatar-img { width: 200px; height: 200px; }
+@media (min-width: 640px) { .avatar-img { width: 240px; height: 240px; } }
+
+/* ── Education timeline — single column on mobile ── */
+.edu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.edu-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.edu-card { width: 100%; text-align: left !important; }
+
+@media (min-width: 768px) {
+  .edu-entry {
+    display: grid;
+    grid-template-columns: 1fr 64px 1fr;
+    align-items: center;
+    gap: 0;
+  }
+  .edu-card { width: auto; }
+}
+
+/* ── IC chip package mobile ── */
+.ic-package-wrap { padding: 28px 24px 20px; }
+@media (min-width: 640px) { .ic-package-wrap { padding: 36px 48px 28px; } }
+
 /* ── Experience card expand on hover ── */
 .exp-card {
   height: 200px;
