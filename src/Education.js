@@ -2,10 +2,10 @@ import React from 'react';
 
 const EDUCATION = [
   {
-    period: '2019 – 2022',
+    period: '2017 – 2022',
     title: 'IT School',
     org: 'Al-Khawrezmi IT School',
-    desc: 'Built a rigorous foundation in CS and web development at one of Uzbekistan\'s leading IT schools — named after the 9th-century mathematician who gave us the word "algorithm".',
+    desc: 'Built a rigorous foundation in CS and web development at one of Uzbekistan\'s leading IT schools — named after the 9th-century mathematician who gave us the word "algorithm". In the final two years, majored in mobile development — building Android apps with Android Studio and learning Java and Kotlin.',
     icon: '◉',
     color: '#22d3ee',
     badge: 'Diploma',
