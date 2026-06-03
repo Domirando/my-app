@@ -65,31 +65,31 @@ function Portfolio() {
       <HashScrollInit />
       <Nav />
 
-      <section id="hero" style={{ height: '100vh' }}>
+      <section id="hero" style={{ minHeight: '100vh' }}>
         <Hero />
       </section>
 
-      <section id="about" style={{ height: '100vh' }}>
+      <section id="about" style={{ minHeight: '100vh' }}>
         <About />
       </section>
 
-      <section id="skills" style={{ height: '100vh' }}>
+      <section id="skills" style={{ minHeight: '100vh' }}>
         <Skills />
       </section>
 
-      <section id="education" style={{ height: '100vh' }}>
+      <section id="education" style={{ minHeight: '100vh' }}>
         <Education />
       </section>
 
-      <section id="experience" style={{ height: '100vh' }}>
+      <section id="experience" style={{ minHeight: '100vh' }}>
         <Experience />
       </section>
 
-      <section id="writing" style={{ height: '100vh' }}>
+      <section id="writing" style={{ minHeight: '100vh' }}>
         <Writing />
       </section>
 
-      <section id="contact" style={{ height: '100vh' }}>
+      <section id="contact" style={{ minHeight: '100vh' }}>
         <Contact />
       </section>
 

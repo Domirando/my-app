@@ -103,7 +103,7 @@ export default function Hero() {
   return (
     <div
       className="hero-bg"
-      style={{ width: '100%', height: '100vh', display: 'flex', alignItems: 'center', paddingTop: 64, position: 'relative', overflow: 'hidden' }}
+      style={{ width: '100%', minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 80, paddingBottom: 32, position: 'relative', overflow: 'hidden' }}
     >
       <CircuitSvg />
 
@@ -124,7 +124,7 @@ export default function Hero() {
               src="/digital-human-audio.mp3"
               onEnded={() => setSpeaking(false)}
             />
-            <div style={{ position: 'relative', width: 240, height: 240 }}>
+            <div className="avatar-wrap">
               {/* Speaking glow rings */}
               {speaking && <>
                 <div style={{
@@ -167,9 +167,9 @@ export default function Hero() {
               <img
                 src={myImage}
                 alt="Maftuna Vohidjonovna"
-                className="rounded-full object-cover border-4 relative"
+                className="avatar-img rounded-full object-cover border-4 relative"
                 style={{
-                  width: 240, height: 240, zIndex: 1,
+                  zIndex: 1,
                   borderColor: speaking ? 'rgba(168,85,247,0.7)' : 'rgba(168,85,247,0.3)',
                   transition: 'border-color 0.3s ease',
                   cursor: 'pointer',
@@ -261,7 +261,7 @@ export default function Hero() {
               <span className="text-slate-600 text-lg">—</span>
               <span
                 className={`text-base text-cyan-400 font-semibold role-text ${changing ? 'changing' : ''}`}
-                style={{ minWidth: 240 }}
+                style={{ minWidth: 0 }}
               >
                 {ROLES[roleIdx]}
                 <span className="cursor-blink text-purple-400 ml-1 font-normal">|</span>

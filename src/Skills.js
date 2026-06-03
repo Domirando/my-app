@@ -22,14 +22,14 @@ const OTHER = [
     sym: '⚙',
     color: 'text-cyan-400',
     tagClass: 'bg-cyan-500/10 border-cyan-500/20 text-cyan-300 hover:border-cyan-400/60 hover:bg-cyan-500/20',
-    skills: ['Git', 'GitHub', 'VS Code', 'WebStorm', 'npm / yarn'],
+    skills: ['Git', 'GitHub', 'VS Code', 'WebStorm', 'npm / yarn', 'NixOS', 'Linux'],
   },
   {
     name: 'Beyond the Code',
     sym: '◉',
     color: 'text-emerald-400',
     tagClass: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300 hover:border-emerald-400/60 hover:bg-emerald-500/20',
-    skills: ['Open-Source', 'Tech Teaching', 'Math Teaching', 'Hackathon Org', 'Community Building', 'Technical Writing'],
+    skills: ['Open-Source', 'Tech Teaching', 'Math Teaching', 'Hackathon Org', 'Community Building', 'Technical Writing', 'Sales Agent', 'CEFR Speaking & Writing Mentor', 'Interpreter'],
   },
 ];
 
@@ -38,7 +38,7 @@ const PIN_COUNT = 3;
 function IcPackage() {
   const pins = Array.from({ length: PIN_COUNT });
   return (
-    <div className="ic-package chip-card-glow mb-6" style={{ padding: '36px 48px 28px' }}>
+    <div className="ic-package chip-card-glow ic-package-wrap mb-6">
       {/* Top notch */}
       <div className="ic-notch" />
 
@@ -106,7 +106,7 @@ export default function Skills() {
     <div
       id="skills"
       className="chip-bg"
-      style={{ width: '100%', height: '100vh', display: 'flex', alignItems: 'center', paddingTop: 64, background: 'rgba(13,13,36,0.4)' }}
+      style={{ width: '100%', minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 80, paddingBottom: 32, background: 'rgba(13,13,36,0.4)' }}
     >
       <div className="max-w-5xl mx-auto px-6 w-full">
         <p className="text-amber-400 text-xs tracking-widest uppercase mb-2 font-semibold">

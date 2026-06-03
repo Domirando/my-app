@@ -24,7 +24,7 @@ const WRITINGS = [
 export default function Writing() {
   return (
     <div
-      style={{ width: '100%', height: '100vh', display: 'flex', alignItems: 'center', paddingTop: 64, background: 'rgba(10,10,28,0.5)' }}
+      style={{ width: '100%', minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 80, paddingBottom: 32, background: 'rgba(10,10,28,0.5)' }}
     >
       <div className="max-w-4xl mx-auto px-6 w-full">
         <p className="text-purple-400 text-xs tracking-widest uppercase mb-3 font-semibold text-center">
