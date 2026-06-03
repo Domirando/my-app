@@ -58,8 +58,6 @@ function Portfolio() {
         background: '#060614',
         color: '#f1f5f9',
         overflowX: 'hidden',
-        scrollSnapType: 'y proximity',
-        scrollBehavior: 'smooth',
         overflowY: 'scroll',
         height: '100vh',
       }}
@@ -67,31 +65,31 @@ function Portfolio() {
       <HashScrollInit />
       <Nav />
 
-      <section id="hero" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+      <section id="hero" style={{ height: '100vh' }}>
         <Hero />
       </section>
 
-      <section id="about" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+      <section id="about" style={{ height: '100vh' }}>
         <About />
       </section>
 
-      <section id="skills" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+      <section id="skills" style={{ height: '100vh' }}>
         <Skills />
       </section>
 
-      <section id="education" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+      <section id="education" style={{ height: '100vh' }}>
         <Education />
       </section>
 
-      <section id="experience" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+      <section id="experience" style={{ height: '100vh' }}>
         <Experience />
       </section>
 
-      <section id="writing" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+      <section id="writing" style={{ height: '100vh' }}>
         <Writing />
       </section>
 
-      <section id="contact" style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh' }}>
+      <section id="contact" style={{ height: '100vh' }}>
         <Contact />
       </section>
 
