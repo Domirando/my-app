@@ -2,7 +2,7 @@ import React from 'react';
 
 const EDUCATION = [
   {
-    period: '2017 – 2022',
+    period: '2017 – 2024',
     title: 'IT School',
     org: 'Al-Khawrezmi IT School',
     desc: 'Built a rigorous foundation in CS and web development at one of Uzbekistan\'s leading IT schools — named after the 9th-century mathematician who gave us the word "algorithm". In the final two years, majored in mobile development — building Android apps with Android Studio and learning Java and Kotlin.',
@@ -11,7 +11,7 @@ const EDUCATION = [
     badge: 'Diploma',
   },
   {
-    period: '2022 – Present',
+    period: '2024 – Present',
     title: 'Chemical & Materials Engineering',
     org: 'University',
     desc: 'Pursuing a degree in Chemical and Materials Engineering — where science meets code. Science by day, open-source by night.',
