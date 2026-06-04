@@ -6,7 +6,7 @@ const WRITINGS = [
     type: 'Personal Essay',
     sym: '✍',
     description:
-      'A personal narrative about pain, resilience, and the drive to keep going — written at 2:30 AM when the world is waiting for your help.',
+      'A personal narrative about pain, resilience, and the drive to keep going — written at 2:30 AM when sleep felt too far away.',
     tags: ['Essay', 'Personal', 'Resilience'],
     file: '/open-blinds.pdf',
   },
